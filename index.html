@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="REEHAA: Unifying Instance Segmentation and Risk Reasoning for Railway External Environmental Hazard Analysis in UAV Remote Sensing Imagery.">
+  <meta name="theme-color" content="#ffffff"><title>REEHAA · Railway Environmental Hazard Analysis</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=compact-6">
+  <script src="examples.js?v=compact-6" defer></script><script src="app.js?v=compact-6" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#capabilities">Skip to examples</a>
+  <header class="site-header"><a class="brand" href="#" aria-label="REEHAA home">REEHAA</a><nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#dataset">Dataset</a><a href="#capabilities">Capabilities</a></nav><a class="repo-link" href="https://github.com/ZhihongLi98/REEHAA" target="_blank" rel="noopener">GitHub</a></header>
+  <main>
+    <section class="hero wrap" aria-labelledby="project-title">
+      <h1 id="project-title">REEHAA</h1>
+      <p class="final-paper-title">Unifying Instance Segmentation and Risk Reasoning for Railway External Environmental Hazard Analysis in UAV Remote Sensing Imagery</p>
+      <p class="authors">Zhihong Li<sup>1</sup> · Qing Zhu<sup>1</sup> · Cheng Liao<sup>1,2</sup> · Shuo Shi<sup>2</sup> · Jiawei Zhang<sup>2</sup> · Yuhong Jiang<sup>3</sup></p>
+      <p class="affiliations"><span><sup>1</sup> Southwest Jiaotong University</span><span><sup>2</sup> China Railway First Survey and Design Institute Group Co., Ltd.</span><span><sup>3</sup> Harbin Normal University</span></p>
+    </section>
+
+    <section id="overview" class="overview-section wrap" aria-labelledby="overview-title">
+      <div class="section-heading"><h2 id="overview-title">Overview</h2></div>
+      <p class="section-intro">REEHAA is a pixel-level multimodal large language model that unifies instance segmentation and multi-condition risk reasoning segmentation for railway environmental hazard analysis. Visually grounded query contextualization and query-projected spatial–semantic unified prediction connect visual evidence with category and risk-state semantics. Progressive cross-task collaborative learning strengthens instance localization and risk-state discrimination.</p>
+      <figure class="paper-figure"><button class="figure-button" type="button" data-figure="assets/architecture.png" data-caption="REEHAA overview" aria-label="Enlarge the REEHAA overview"><img src="assets/architecture.png" alt="REEHAA architecture overview from the final manuscript" width="2800" height="1158" loading="lazy"><span class="enlarge-label">View full size ↗</span></button></figure>
+      <div class="overview-demo">
+        <h3>Two tasks, one image</h3>
+        <div class="overview-visual"><button id="overview-image" class="card-image" type="button" aria-label="Toggle input and REEHAA output for the overview example" aria-pressed="false"><img id="overview-input" alt="Overview example input UAV image" width="1024" height="1024" loading="lazy"><img id="overview-output" class="prediction-image" alt="REEHAA instance segmentation from the overview" width="1024" height="1024" loading="lazy"><span class="image-label input-label">Input</span><span class="image-label output-label">Segmentation</span></button></div>
+        <div class="overview-prompt"><div class="segmented overview-task-toggle" role="group" aria-label="Overview task prompt"><button type="button" data-overview-task="task1" aria-label="Prompt 1: Instance segmentation" title="Instance segmentation" aria-pressed="true">Prompt 1</button><button type="button" data-overview-task="task2" aria-label="Prompt 2: Risk reasoning" title="Risk reasoning" aria-pressed="false">Prompt 2</button></div><p class="prompt-panel"><strong>Prompt: </strong><span id="overview-prompt-text"></span></p></div>
+      </div>
+    </section>
+
+    <section id="dataset" class="dataset-section" aria-labelledby="dataset-title"><div class="wrap"><div class="section-heading"><h2 id="dataset-title">REEH-D Dataset</h2></div><p class="section-intro">REEH-D contains 16,708 high-resolution UAV images and 128,231 hazard instances from six railway lines across four Chinese provinces. It covers steel-sheet roof buildings, greenhouses, dust-proof nets, and plastic mulch, with instance masks, non-mutually exclusive risk-state labels, and visually grounded descriptions. A geographically independent test split supports cross-region evaluation.</p><figure class="paper-figure"><button class="figure-button" type="button" data-figure="assets/dataset-construction.png" data-caption="REEH-D construction pipeline" aria-label="Enlarge the dataset construction pipeline"><img src="assets/dataset-construction.png" alt="REEH-D dataset construction pipeline from the final manuscript" width="2800" height="938" loading="lazy"><span class="enlarge-label">View full size ↗</span></button></figure></div></section>
+
+    <section id="capabilities" class="capabilities wrap" aria-labelledby="capabilities-title"><div class="section-heading"><h2 id="capabilities-title">Capabilities</h2></div>
+      <div class="dataset-bar"><span class="control-label">Evaluation split</span><div class="segmented" role="group" aria-label="Evaluation split"><button type="button" data-dataset="original" aria-pressed="true">Original Validation</button><button type="button" data-dataset="cross-region" aria-pressed="false">Cross-region Test</button></div></div>
+      <section class="task-section" data-task="task1" aria-labelledby="task1-title"><div class="task-heading"><h3 id="task1-title">Instance segmentation</h3></div><div class="example-carousel" id="grid-task1"></div></section>
+      <section class="task-section" data-task="task2" aria-labelledby="task2-title"><div class="task-heading"><h3 id="task2-title">Multi-condition risk reasoning segmentation</h3></div><div class="example-carousel" id="grid-task2"></div></section>
+      <div class="gallery-footer"><div class="legend" id="category-legend" aria-label="Category colors"></div></div>
+      <noscript><p>Enable JavaScript to explore the REEHAA examples.</p></noscript>
+    </section>
+    <section class="release-section wrap"><p>Code and dataset will be released upon paper acceptance.</p></section>
+  </main>
+  <footer class="site-footer wrap"><span class="footer-brand">REEHAA</span><a href="https://github.com/ZhihongLi98/REEHAA/blob/main/README_zh-CN.md" target="_blank" rel="noopener">简体中文介绍 ↗</a></footer>
+  <dialog id="inspector" aria-labelledby="inspector-title"><div class="dialog-head"><h2 id="inspector-title"></h2><button class="close-button" type="button" aria-label="Close example">×</button></div><p id="inspector-query" class="inspector-query"></p><div class="inspector-panels result-pair"><figure><img id="inspector-input" alt="Original UAV image"><figcaption>Input</figcaption></figure><figure><img id="inspector-output" alt="REEHAA prediction"><figcaption>REEHAA</figcaption></figure></div></dialog>
+  <dialog id="figure-viewer" aria-labelledby="figure-viewer-title"><div class="dialog-head"><h2 id="figure-viewer-title"></h2><button type="button" class="close-button" aria-label="Close enlarged figure">×</button></div><img id="figure-large" alt=""></dialog>
+</body>
+</html>

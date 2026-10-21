@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+qa/
+.DS_Store
+Thumbs.db
+export-thresholds.md
+DEPLOY.md
